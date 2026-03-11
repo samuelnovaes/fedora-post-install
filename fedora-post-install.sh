@@ -27,6 +27,7 @@ gnome-tweaks \
 papirus-icon-theme \
 breeze-cursor-theme \
 adw-gtk3-theme \
+jetbrains-mono-fonts \
 fastfetch \
 btrfs-assistant \
 akmod-nvidia \
