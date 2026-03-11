@@ -27,6 +27,7 @@ gnome-tweaks \
 papirus-icon-theme \
 breeze-cursor-theme \
 adw-gtk3-theme \
+fastfetch \
 akmod-nvidia \
 steam
 
