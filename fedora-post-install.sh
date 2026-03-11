@@ -28,6 +28,7 @@ papirus-icon-theme \
 breeze-cursor-theme \
 adw-gtk3-theme \
 fastfetch \
+btrfs-assistant \
 akmod-nvidia \
 steam
 
