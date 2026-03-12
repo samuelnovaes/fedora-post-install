@@ -23,7 +23,6 @@ google-chrome-stable \
 gnome-shell-extension-appindicator \
 gnome-shell-extension-dash-to-dock \
 gnome-shell-extension-user-theme \
-gnome-tweaks \
 papirus-icon-theme \
 breeze-cursor-theme \
 adw-gtk3-theme \
@@ -35,7 +34,6 @@ steam
 
 # Install flatpaks
 flatpak install flathub \
-io.github.realmazharhussain.GdmSettings \
 io.podman_desktop.PodmanDesktop \
 com.mongodb.Compass \
 com.spotify.Client \
@@ -78,3 +76,12 @@ wget -P /tmp https://go.dev/dl/$GO_TARBALL
 sudo tar -C /usr/local -xzf /tmp/$GO_TARBALL
 echo | sudo tee -a /etc/profile > /dev/null
 echo "export PATH=\$PATH:/usr/local/go/bin" | sudo tee -a /etc/profile > /dev/null
+
+# Gnome settings
+cp ./wallpaper.jpg ~/.local/share/backgrounds
+gsettings set org.gnome.desktop.background picture-uri "file://$HOME/.local/share/backgrounds/wallpaper.jpg"
+gsettings set org.gnome.desktop.interface color-scheme prefer-dark
+gsettings set org.gnome.desktop.interface gtk-theme adw-gtk3-dark
+gsettings set org.gnome.desktop.interface icon-theme Papirus-Dark
+gsettings set org.gnome.desktop.interface cursor-theme breeze_cursors
+gsettings set org.gnome.shell favorite-apps "['google-chrome.desktop', 'code.desktop', 'org.gnome.Ptyxis.desktop', 'com.mongodb.Compass.desktop', 'com.spotify.Client.desktop', 'com.discordapp.Discord.desktop', 'io.podman_desktop.PodmanDesktop.desktop', 'org.gnome.Nautilus.desktop']"
