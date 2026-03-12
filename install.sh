@@ -79,7 +79,10 @@ echo "export PATH=\$PATH:/usr/local/go/bin" | sudo tee -a /etc/profile > /dev/nu
 
 # Gnome settings
 cp ./wallpaper.jpg ~/.local/share/backgrounds
+sudo cp ./avatar.jpg /var/lib/AccountsService/icons/$USER
 gsettings set org.gnome.desktop.background picture-uri "file://$HOME/.local/share/backgrounds/wallpaper.jpg"
+gsettings set org.gnome.desktop.interface enable-hot-corners false
+gsettings set org.gnome.desktop.interface accent-color purple
 gsettings set org.gnome.desktop.interface color-scheme prefer-dark
 gsettings set org.gnome.desktop.interface gtk-theme adw-gtk3-dark
 gsettings set org.gnome.desktop.interface icon-theme Papirus-Dark
