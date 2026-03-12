@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Remove unwanted packages
-sudo dnf remove \
+sudo dnf remove -y \
 firefox \
 gnome-contacts \
 gnome-weather \
@@ -18,7 +18,7 @@ gnome-calendar \
 gnome-shell-extension-*
 
 # Install wanted packages
-sudo dnf install \
+sudo dnf install -y \
 google-chrome-stable \
 gnome-shell-extension-appindicator \
 gnome-shell-extension-dash-to-dock \
@@ -33,7 +33,7 @@ akmod-nvidia \
 steam
 
 # Install flatpaks
-flatpak install flathub \
+flatpak install -y flathub \
 io.podman_desktop.PodmanDesktop \
 com.mongodb.Compass \
 com.spotify.Client \
@@ -61,7 +61,7 @@ sudo su -c 'nano ~/.bashrc'
 
 # Install vscode
 sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc && echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\nautorefresh=1\ntype=rpm-md\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" | sudo tee /etc/yum.repos.d/vscode.repo > /dev/null
-dnf check-update && sudo dnf install code
+dnf check-update && sudo dnf install -y code
 
 # Install nodejs
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh | bash
