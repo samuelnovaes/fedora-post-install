@@ -79,31 +79,20 @@ sudo tar -C /usr/local -xzf /tmp/$GO_TARBALL
 echo | sudo tee -a /etc/profile > /dev/null
 echo "export PATH=\$PATH:/usr/local/go/bin" | sudo tee -a /etc/profile > /dev/null
 
-# Gnome settings
+# Apply images
 mkdir -p ~/.local/share/backgrounds
 cp ./wallpaper.jpg ~/.local/share/backgrounds/wallpaper.jpg
 sudo cp ./avatar.jpg /var/lib/AccountsService/icons/$USER
-gsettings set org.gnome.desktop.background picture-uri "file://$HOME/.local/share/backgrounds/wallpaper.jpg"
-gsettings set org.gnome.desktop.background picture-uri-dark "file://$HOME/.local/share/backgrounds/wallpaper.jpg"
-gsettings set org.gnome.desktop.interface enable-hot-corners false
-gsettings set org.gnome.desktop.interface accent-color purple
-gsettings set org.gnome.desktop.interface color-scheme prefer-dark
-gsettings set org.gnome.desktop.interface gtk-theme adw-gtk3-dark
-gsettings set org.gnome.desktop.interface icon-theme Papirus-Dark
-gsettings set org.gnome.desktop.interface cursor-theme breeze_cursors
-gsettings set org.gnome.shell favorite-apps "['google-chrome.desktop', 'code.desktop', 'org.gnome.Ptyxis.desktop', 'com.mongodb.Compass.desktop', 'com.spotify.Client.desktop', 'com.discordapp.Discord.desktop', 'io.podman_desktop.PodmanDesktop.desktop', 'org.gnome.Nautilus.desktop', 'com.getpostman.Postman.desktop']"
-gsettings set org.gnome.shell enabled-extensions "['appindicatorsupport@rgcjonas.gmail.com', 'dash-to-dock@micxgx.gmail.com', 'blur-my-shell@aunetx']"
-gsettings set org.gnome.desktop.input-sources sources "[('xkb', 'br')]"
 
 # Clean up unecessary packages
 sudo dnf autoremove -y
 
-# Config extensions on next reboot
+# Config gnome settings on next reboot
 mkdir -p ~/.config/autostart
-cat <<EOT > ~/.config/autostart/extconf.desktop
+cat <<EOT > ~/.config/autostart/gsettings.desktop
 [Desktop Entry]
 Type=Application
 Name=Configurar Extensões
-Exec=$(pwd)/extconf.sh
+Exec=$(pwd)/gsettings.sh
 X-GNOME-Autostart-enabled=true
 EOT
