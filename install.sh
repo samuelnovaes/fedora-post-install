@@ -87,12 +87,21 @@ sudo cp ./avatar.jpg /var/lib/AccountsService/icons/$USER
 # Clean up unecessary packages
 sudo dnf autoremove -y
 
-# Define GNOME settings on next reboot
-mkdir -p ~/.config/autostart
-cat <<EOT > ~/.config/autostart/gsettings.desktop
-[Desktop Entry]
-Type=Application
-Name=Configurar Extensões
-Exec=$(pwd)/gsettings.sh
-X-GNOME-Autostart-enabled=true
+# Define GNOME settings on next boot
+mkdir -p ~/.config/systemd/user
+
+cat <<EOT > ~/.config/systemd/user/gsettings.service
+[Unit]
+Description=Configurar Extensões
+After=graphical-session.target
+
+[Service]
+Type=oneshot
+ExecStart=$(pwd)/gsettings.sh
+
+[Install]
+WantedBy=graphical-session.target
 EOT
+
+systemctl --user daemon-reload
+systemctl --user enable gsettings.service

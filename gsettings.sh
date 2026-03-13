@@ -1,3 +1,5 @@
+#!/bin/bash
+
 gsettings set org.gnome.desktop.background picture-uri "file://$HOME/.local/share/backgrounds/wallpaper.jpg"
 gsettings set org.gnome.desktop.background picture-uri-dark "file://$HOME/.local/share/backgrounds/wallpaper.jpg"
 gsettings set org.gnome.desktop.interface enable-hot-corners false
@@ -15,4 +17,5 @@ gsettings set org.gnome.shell.extensions.dash-to-dock disable-overview-on-startu
 gsettings set org.gnome.shell.extensions.dash-to-dock multi-monitor true
 gsettings set org.gnome.shell.extensions.blur-my-shell.dash-to-dock blur false
 
-rm ~/.config/autostart/gsettings.desktop
+systemctl --user disable gsettings.service
+rm ~/.config/systemd/user/gsettings.service
