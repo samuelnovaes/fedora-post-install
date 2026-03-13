@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sleep 5
+sleep 15
 
 gsettings set org.gnome.desktop.background picture-uri "file://$HOME/.local/share/backgrounds/wallpaper.jpg"
 gsettings set org.gnome.desktop.background picture-uri-dark "file://$HOME/.local/share/backgrounds/wallpaper.jpg"
