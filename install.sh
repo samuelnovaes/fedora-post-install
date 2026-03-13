@@ -97,3 +97,13 @@ gsettings set org.gnome.desktop.input-sources sources "[('xkb', 'br')]"
 
 # Clean up unecessary packages
 sudo dnf autoremove -y
+
+# Config extensions on next reboot
+mkdir -p ~/.config/autostart
+cat <<EOT > ~/.config/autostart/extconf.desktop
+[Desktop Entry]
+Type=Application
+Name=Configurar Extensões
+Exec=$(pwd)/extconf.sh
+X-GNOME-Autostart-enabled=true
+EOT
