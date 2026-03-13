@@ -40,7 +40,8 @@ com.spotify.Client \
 com.discordapp.Discord \
 io.github.nozwock.Packet \
 org.gnome.Boxes \
-com.getpostman.Postman
+com.getpostman.Postman \
+com.obsproject.Studio
 
 # Config git
 git config --global user.name "Samuel Novaes"
