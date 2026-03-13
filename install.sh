@@ -39,7 +39,8 @@ com.mongodb.Compass \
 com.spotify.Client \
 com.discordapp.Discord \
 io.github.nozwock.Packet \
-org.gnome.Boxes
+org.gnome.Boxes \
+com.getpostman.Postman
 
 # Config git
 git config --global user.name "Samuel Novaes"
@@ -90,7 +91,7 @@ gsettings set org.gnome.desktop.interface color-scheme prefer-dark
 gsettings set org.gnome.desktop.interface gtk-theme adw-gtk3-dark
 gsettings set org.gnome.desktop.interface icon-theme Papirus-Dark
 gsettings set org.gnome.desktop.interface cursor-theme breeze_cursors
-gsettings set org.gnome.shell favorite-apps "['google-chrome.desktop', 'code.desktop', 'org.gnome.Ptyxis.desktop', 'com.mongodb.Compass.desktop', 'com.spotify.Client.desktop', 'com.discordapp.Discord.desktop', 'io.podman_desktop.PodmanDesktop.desktop', 'org.gnome.Nautilus.desktop']"
+gsettings set org.gnome.shell favorite-apps "['google-chrome.desktop', 'code.desktop', 'org.gnome.Ptyxis.desktop', 'com.mongodb.Compass.desktop', 'com.spotify.Client.desktop', 'com.discordapp.Discord.desktop', 'io.podman_desktop.PodmanDesktop.desktop', 'org.gnome.Nautilus.desktop', 'com.getpostman.Postman.desktop']"
 gsettings set org.gnome.shell enabled-extensions "['appindicatorsupport@rgcjonas.gmail.com', 'dash-to-dock@micxgx.gmail.com', 'blur-my-shell@aunetx']"
 gsettings set org.gnome.desktop.input-sources sources "[('xkb', 'br')]"
 gsettings set org.gnome.shell.extensions.dash-to-dock transparency-mode DYNAMIC
