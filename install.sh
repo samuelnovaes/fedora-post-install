@@ -22,7 +22,6 @@ sudo dnf install -y \
 google-chrome-stable \
 gnome-shell-extension-appindicator \
 gnome-shell-extension-dash-to-dock \
-gnome-shell-extension-user-theme \
 papirus-icon-theme \
 breeze-cursor-theme \
 adw-gtk3-theme \
