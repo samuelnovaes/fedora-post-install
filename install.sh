@@ -22,6 +22,7 @@ sudo dnf install -y \
 google-chrome-stable \
 gnome-shell-extension-appindicator \
 gnome-shell-extension-dash-to-dock \
+gnome-shell-extension-blur-my-shell \
 papirus-icon-theme \
 breeze-cursor-theme \
 adw-gtk3-theme \
@@ -90,7 +91,8 @@ gsettings set org.gnome.desktop.interface gtk-theme adw-gtk3-dark
 gsettings set org.gnome.desktop.interface icon-theme Papirus-Dark
 gsettings set org.gnome.desktop.interface cursor-theme breeze_cursors
 gsettings set org.gnome.shell favorite-apps "['google-chrome.desktop', 'code.desktop', 'org.gnome.Ptyxis.desktop', 'com.mongodb.Compass.desktop', 'com.spotify.Client.desktop', 'com.discordapp.Discord.desktop', 'io.podman_desktop.PodmanDesktop.desktop', 'org.gnome.Nautilus.desktop']"
-gsettings set org.gnome.shell enabled-extensions "['appindicatorsupport@rgcjonas.gmail.com', 'dash-to-dock@micxgx.gmail.com']"
+gsettings set org.gnome.shell enabled-extensions "['appindicatorsupport@rgcjonas.gmail.com', 'dash-to-dock@micxgx.gmail.com', 'blur-my-shell@aunetx']"
+gsettings set org.gnome.desktop.input-sources sources "[('xkb', 'br')]"
 
 # Clean up unecessary packages
 sudo dnf autoremove -y
