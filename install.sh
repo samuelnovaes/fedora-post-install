@@ -87,7 +87,7 @@ sudo cp ./avatar.jpg /var/lib/AccountsService/icons/$USER
 # Clean up unecessary packages
 sudo dnf autoremove -y
 
-# Config gnome settings on next reboot
+# Config GNOME settings on next reboot
 mkdir -p ~/.config/autostart
 cat <<EOT > ~/.config/autostart/gsettings.desktop
 [Desktop Entry]
