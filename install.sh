@@ -93,6 +93,9 @@ gsettings set org.gnome.desktop.interface cursor-theme breeze_cursors
 gsettings set org.gnome.shell favorite-apps "['google-chrome.desktop', 'code.desktop', 'org.gnome.Ptyxis.desktop', 'com.mongodb.Compass.desktop', 'com.spotify.Client.desktop', 'com.discordapp.Discord.desktop', 'io.podman_desktop.PodmanDesktop.desktop', 'org.gnome.Nautilus.desktop']"
 gsettings set org.gnome.shell enabled-extensions "['appindicatorsupport@rgcjonas.gmail.com', 'dash-to-dock@micxgx.gmail.com', 'blur-my-shell@aunetx']"
 gsettings set org.gnome.desktop.input-sources sources "[('xkb', 'br')]"
+gsettings set org.gnome.shell.extensions.dash-to-dock transparency-mode DYNAMIC
+gsettings set org.gnome.shell.extensions.dash-to-dock show-trash false
+gsettings set org.gnome.shell.extensions.blur-my-shell.dash-to-dock blur false
 
 # Clean up unecessary packages
 sudo dnf autoremove -y
