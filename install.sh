@@ -61,7 +61,8 @@ sudo su -c 'nano ~/.bashrc'
 
 # Install vscode
 sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc && echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\nautorefresh=1\ntype=rpm-md\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" | sudo tee /etc/yum.repos.d/vscode.repo > /dev/null
-dnf check-update && sudo dnf install -y code
+dnf check-update
+sudo dnf install -y code
 
 # Install nodejs
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh | bash
@@ -78,9 +79,11 @@ echo | sudo tee -a /etc/profile > /dev/null
 echo "export PATH=\$PATH:/usr/local/go/bin" | sudo tee -a /etc/profile > /dev/null
 
 # Gnome settings
-cp ./wallpaper.jpg ~/.local/share/backgrounds
+mkdir -p ~/.local/share/backgrounds
+cp ./wallpaper.jpg ~/.local/share/backgrounds/wallpaper.jpg
 sudo cp ./avatar.jpg /var/lib/AccountsService/icons/$USER
 gsettings set org.gnome.desktop.background picture-uri "file://$HOME/.local/share/backgrounds/wallpaper.jpg"
+gsettings set org.gnome.desktop.background picture-uri-dark "file://$HOME/.local/share/backgrounds/wallpaper.jpg"
 gsettings set org.gnome.desktop.interface enable-hot-corners false
 gsettings set org.gnome.desktop.interface accent-color purple
 gsettings set org.gnome.desktop.interface color-scheme prefer-dark
