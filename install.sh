@@ -73,13 +73,21 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh | bash
 nvm install --lts
 npm i -g npm
 
-## Install Go
+# Install Go
 GO_VERSION=$(curl -sSL "https://go.dev/VERSION?m=text" | head -n 1)
 GO_TARBALL=$GO_VERSION.linux-amd64.tar.gz
 wget -P /tmp https://go.dev/dl/$GO_TARBALL
 sudo tar -C /usr/local -xzf /tmp/$GO_TARBALL
 echo | sudo tee -a /etc/profile > /dev/null
 echo "export PATH=\$PATH:/usr/local/go/bin" | sudo tee -a /etc/profile > /dev/null
+
+# Install Smart Tiling GNOME Extension
+git clone https://github.com/samuelnovaes/smart-tiling /tmp/smart-tiling
+cd /tmp/smart-tiling
+npm ci
+npm run build
+gnome-extensions install --force smarttiling@samuelnovaes.zip
+cd ~
 
 # Apply images
 mkdir -p ~/.local/share/backgrounds
