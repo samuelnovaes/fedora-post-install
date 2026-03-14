@@ -41,7 +41,8 @@ com.discordapp.Discord \
 io.github.nozwock.Packet \
 org.gnome.Boxes \
 com.getpostman.Postman \
-com.obsproject.Studio
+com.obsproject.Studio \
+de.haeckerfelix.Fragments
 
 # Config git
 git config --global user.name "Samuel Novaes"
