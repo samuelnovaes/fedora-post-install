@@ -1,5 +1,7 @@
 #!/bin/bash
 
+cd ~
+
 # Remove unwanted packages
 sudo dnf remove -y \
 firefox \
@@ -29,6 +31,7 @@ adw-gtk3-theme \
 jetbrains-mono-fonts \
 fastfetch \
 timeshift \
+dkms \
 akmod-nvidia \
 steam
 
@@ -61,6 +64,12 @@ sudo su -c 'git clone --depth=1 https://github.com/Bash-it/bash-it.git ~/.bash_i
 sudo su -c 'rm -rf ~/.bashrc'
 sudo su -c '~/.bash_it/install.sh'
 sudo su -c 'nano ~/.bashrc'
+
+# Galaxy Book 4 Ultra Fixes
+FIXDIR=/tmp/samsung-galaxy-book4-linux-fixes
+git clone https://github.com/Andycodeman/samsung-galaxy-book4-linux-fixes.git $FIXDIR
+cd $FIXDIR/speaker-fix && sudo ./install.sh
+cd ~
 
 # Install vscode
 sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc && echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\nautorefresh=1\ntype=rpm-md\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" | sudo tee /etc/yum.repos.d/vscode.repo > /dev/null
